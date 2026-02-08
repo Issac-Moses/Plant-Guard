@@ -1,0 +1,42 @@
+<svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background Rect -->
+  <rect width="800" height="200" rx="15" fill="#0a0a0a" />
+  
+  <!-- Animated Scan Line -->
+  <rect x="0" y="0" width="2" height="200" fill="#10b981" filter="url(#glow)">
+    <animate attributeName="x" from="0" to="800" dur="3s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite" />
+  </rect>
+  
+  <!-- Leaf Icon -->
+  <path d="M400,140 C400,140 440,100 440,60 C440,30 410,20 400,20 C390,20 360,30 360,60 C360,100 400,140 400,140 Z" fill="url(#leafGrad)">
+    <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="2s" repeatCount="indefinite" additive="sum" transform-origin="400 80" />
+  </path>
+  <path d="M400,140 L400,20" stroke="#064e3b" stroke-width="2" />
+  
+  <!-- Text -->
+  <text x="400" y="175" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="5">
+    PLANT-GUARD
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
+  </text>
+  
+  <!-- Scanning Pulse -->
+  <circle cx="400" cy="80" r="10" fill="none" stroke="#10b981" stroke-width="2">
+    <animate attributeName="r" from="10" to="80" dur="1.5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" from="1" to="0" dur="1.5s" repeatCount="indefinite" />
+  </circle>
+</svg>

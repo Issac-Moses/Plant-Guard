@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered plant disease detection and treatment recommendations">
+    <meta name="keywords" content="plant disease, crop doctor, agriculture, AI, farming">
+    <title>PlantGuard - AI Plant Disease Detector</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <img src="logo.png" alt="Frenzy Logo" class="hero-logo">
+            <h1 class="hero-title">
+                <span class="gradient-text">𝙿𝚕𝚊𝚗𝚝𝙶𝚞𝚊𝚛𝚍</span>
+            </h1>
+            <p class="hero-subtitle">𝚂𝚖𝚊𝚛𝚝 𝙿𝚕𝚊𝚗𝚝 𝙳𝚒𝚜𝚎𝚊𝚜𝚎 𝙳𝚎𝚝𝚎𝚌𝚝𝚒𝚘𝚗 & 𝙲𝚞𝚛𝚎</p>
+            <p class="hero-description">
+                𝚄𝚙𝚕𝚘𝚊𝚍 𝚊 𝚙𝚑𝚘𝚝𝚘 𝚘𝚏 𝚢𝚘𝚞𝚛 𝚊𝚏𝚏𝚎𝚌𝚝𝚎𝚍 𝚙𝚕𝚊𝚗𝚝. 𝙾𝚞𝚛 𝙰𝙸 𝚜𝚢𝚜𝚝𝚎𝚖 𝚠𝚒𝚕𝚕 𝚒𝚍𝚎𝚗𝚝𝚒𝚏𝚢 𝚝𝚑𝚎 𝚍𝚒𝚜𝚎𝚊𝚜𝚎 𝚊𝚗𝚍 𝚙𝚛𝚘𝚟𝚒𝚍𝚎 𝚒𝚗𝚜𝚝𝚊𝚗𝚝
+                𝚝𝚛𝚎𝚊𝚝𝚖𝚎𝚗𝚝 𝚛𝚎𝚌𝚘𝚖𝚖𝚎𝚗𝚍𝚊𝚝𝚒𝚘𝚗𝚜 𝚊𝚗𝚍 𝚙𝚛𝚎𝚟𝚎𝚗𝚝𝚒𝚘𝚗 𝚝𝚒𝚙𝚜.
+            </p>
+        </div>
+        <div class="hero-decoration">
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Input Section -->
+        <section class="input-section">
+            <div class="section-header">
+                <h2 class="section-title">𝚄𝚙𝚕𝚘𝚊𝚍 𝙿𝚕𝚊𝚗𝚝 𝙿𝚑𝚘𝚝𝚘</h2>
+                <p class="section-description">𝚃𝚊𝚔𝚎 𝚊 𝚙𝚒𝚌𝚝𝚞𝚛𝚎 𝚘𝚛 𝚞𝚙𝚕𝚘𝚊𝚍 𝚊𝚗 𝚒𝚖𝚊𝚐𝚎 𝚏𝚛𝚘𝚖 𝚢𝚘𝚞𝚛 𝚐𝚊𝚕𝚕𝚎𝚛𝚢</p>
+            </div>
+
+            <div class="upload-container" id="uploadContainer">
+                <form id="imageForm" class="image-form">
+                    <input type="file" id="imageInput" accept="image/*" class="file-input" capture="environment" hidden>
+
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">☏</div>
+                        <h3 class="upload-title">𝙲𝚕𝚒𝚌𝚔 𝚝𝚘 𝚄𝚙𝚕𝚘𝚊𝚍 𝚘𝚛 𝙳𝚛𝚊𝚐 & 𝙳𝚛𝚘𝚙</h3>
+                        <p class="upload-hint">𝚂𝚞𝚙𝚙𝚘𝚛𝚝𝚜 𝙹𝙿𝙶, 𝙿𝙽𝙶, 𝚆𝙴𝙱𝙿</p>
+                    </div>
+
+                    <div class="image-preview" id="imagePreviewContainer" style="display: none;">
+                        <img id="imagePreview" src="" alt="Preview">
+                        <button type="button" class="remove-image-btn" id="removeImageBtn">×</button>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary" id="analyzeBtn" disabled>
+                            <span class="btn-text">𝙸𝚍𝚎𝚗𝚝𝚒𝚏𝚢 𝙳𝚒𝚜𝚎𝚊𝚜𝚎</span>
+                            <span class="btn-icon">☂</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section" id="resultsSection" style="display: none;">
+            <div class="section-header">
+                <h2 class="section-title">𝙳𝚒𝚊𝚐𝚗𝚘𝚜𝚒𝚜 𝚁𝚎𝚙𝚘𝚛𝚝</h2>
+                <p class="section-description">𝙰𝙸 𝙰𝚗𝚊𝚕𝚢𝚜𝚒𝚜 𝚁𝚎𝚜𝚞𝚕𝚝</p>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-state" id="loadingState">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">𝚂𝚌𝚊𝚗𝚗𝚒𝚗𝚐 𝚙𝚕𝚊𝚗𝚝 𝚑𝚎𝚊𝚕𝚝𝚑...</p>
+            </div>
+
+            <!-- Results Container -->
+            <div class="results-container" id="resultsContainer">
+                <!-- Dynamic result content will be inserted here -->
+            </div>
+
+            <!-- Error State -->
+            <div class="error-state" id="errorState" style="display: none;">
+                <div class="error-icon">⚠️</div>
+                <h3 class="error-title">𝙰𝚗𝚊𝚕𝚢𝚜𝚒𝚜 𝙵𝚊𝚒𝚕𝚎𝚍</h3>
+                <p class="error-message" id="errorMessage"></p>
+                <button class="btn-secondary" onclick="location.reload()">Try Again</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>𝙲𝚛𝚎𝚊𝚝𝚎𝚍 𝚋𝚢  <strong>ℐ𝓈𝓈𝒶𝒸 ℳℴ𝓈ℯ𝓈 </strong>  | 𝙿𝚕𝚊𝚗𝚝𝙶𝚞𝚊𝚛𝚍 - 𝙿𝚛𝚘𝚝𝚎𝚌𝚝 𝚈𝚘𝚞𝚛 𝙲𝚛𝚘𝚙𝚜</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
